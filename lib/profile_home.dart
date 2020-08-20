@@ -30,7 +30,7 @@ class _ProfileHomeState extends State<ProfileHome> {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.all(30.0),
+        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: Column(
           children: [
             cardProfile(),
