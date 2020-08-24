@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_profile_vane/card.dart';
 
 class ProfileHome extends StatefulWidget {
   @override
@@ -6,45 +7,49 @@ class ProfileHome extends StatefulWidget {
 }
 
 class _ProfileHomeState extends State<ProfileHome> {
+  MyCard card = MyCard();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Profile',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-          color: Color(0xFF22215B),
-        ),),
+        title: Text(
+          'My Profile',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+            color: Color(0xFF22215B),
+          ),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         leading: IconButton(
-            icon: Image.asset('assets/img/vector-left.png'),
-          onPressed: (){},
+          icon: Image.asset('assets/img/vector-left.png'),
+          onPressed: () {},
         ),
         actions: [
           IconButton(
             icon: Image.asset('assets/img/more-options.png'),
-            onPressed: (){},
+            onPressed: () {},
           ),
         ],
       ),
       body: Container(
         padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: Column(
-          children: [
-            cardProfile(),
-            SizedBox(height: 10),
-            cardProfileBody(),
-
-
-          ],
-        ),
+        child: card.create(Position.rigth),
+        // child:
+        // Column(
+        //   children: [
+        //     cardProfile(),
+        //     SizedBox(height: 10),
+        //     cardProfileBody(),
+        //   ],
+        // ),
       ),
     );
   }
 
-  Widget cardProfile(){
+  Widget cardProfile() {
     return Container(
       padding: EdgeInsets.all(20.0),
       decoration: BoxDecoration(
@@ -74,7 +79,7 @@ class _ProfileHomeState extends State<ProfileHome> {
                       'PRO',
                       style: TextStyle(
                         color: Colors.white,
-                          fontSize: 10,
+                        fontSize: 10,
                       ),
                     ),
                   ),
@@ -82,28 +87,29 @@ class _ProfileHomeState extends State<ProfileHome> {
               ],
             ),
           ),
-
-          Text('Neelesh Chaudhary',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF22215B),
-            fontSize: 18,
-          ),
-          textAlign: TextAlign.center,),
-          SizedBox(height: 10.0),
-          Text('UI / UX Designer',
-          style: TextStyle(
-            fontSize: 13,
-            color: Color(0xFF22215B),
+          Text(
+            'Neelesh Chaudhary',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF22215B),
+              fontSize: 18,
             ),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 10.0),
-          Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare pretium placerat ut platea.',
-          style: TextStyle(
-            fontSize: 13,
-            color: Color.fromRGBO(34, 33, 91, 0.6)
+          Text(
+            'UI / UX Designer',
+            style: TextStyle(
+              fontSize: 13,
+              color: Color(0xFF22215B),
             ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 10.0),
+          Text(
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare pretium placerat ut platea.',
+            style:
+                TextStyle(fontSize: 13, color: Color.fromRGBO(34, 33, 91, 0.6)),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 10.0),
@@ -126,31 +132,32 @@ class _ProfileHomeState extends State<ProfileHome> {
     );
   }
 
-  Widget cardMyFolders1(){
+  Widget cardMyFolders1() {
     return Container(
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('My Folders',
-              style: TextStyle(
-                fontSize: 15.0,
-                color: Color(0xFF22215B),
-                fontWeight: FontWeight.w600,
-              ),),
+              Text(
+                'My Folders',
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Color(0xFF22215B),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
               Row(
                 children: [
                   IconButton(
-                    onPressed: (){},
-                    icon: Image.asset('assets/img/add.png')
-                  ),
+                      onPressed: () {},
+                      icon: Image.asset('assets/img/add.png')),
                   IconButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     icon: Image.asset('assets/img/settings.png'),
                   ),
                   IconButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     icon: Image.asset('assets/img/vector-right.png'),
                   )
                 ],
@@ -170,26 +177,29 @@ class _ProfileHomeState extends State<ProfileHome> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       icon: Image.asset('assets/img/more-options-v-1.png'),
                     ),
                     Image.asset('assets/img/folder-1.png'),
                   ],
                 ),
-                Text('Mobile Apps',
-                style: TextStyle(
-                  color: Color(0xFF415EB6),
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w500,
+                Text(
+                  'Mobile Apps',
+                  style: TextStyle(
+                    color: Color(0xFF415EB6),
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 SizedBox(height: 0.5),
-                Text('December 20.2020',
-                style: TextStyle(
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.normal,
-                  color: Color(0xFF415EB6),
-                ),),
+                Text(
+                  'December 20.2020',
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.normal,
+                    color: Color(0xFF415EB6),
+                  ),
+                ),
               ],
             ),
           ),
@@ -207,25 +217,28 @@ class _ProfileHomeState extends State<ProfileHome> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       icon: Image.asset('assets/img/more-options-v-2.png'),
                     ),
                     Image.asset('assets/img/folder-2.png'),
                   ],
                 ),
-                Text('SGV Icons',
+                Text(
+                  'SGV Icons',
                   style: TextStyle(
                     color: Color(0xFFFFB110),
                     fontSize: 15.0,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Text('December 14.2020',
+                Text(
+                  'December 14.2020',
                   style: TextStyle(
                     fontSize: 10.0,
                     fontWeight: FontWeight.normal,
                     color: Color(0xFFFFB110),
-                  ),),
+                  ),
+                ),
               ],
             ),
           ),
@@ -234,31 +247,32 @@ class _ProfileHomeState extends State<ProfileHome> {
     );
   }
 
-  Widget cardMyFolders2(){
+  Widget cardMyFolders2() {
     return Container(
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('My Folders',
+              Text(
+                'My Folders',
                 style: TextStyle(
                   fontSize: 15.0,
                   color: Color(0xFF22215B),
                   fontWeight: FontWeight.w600,
-                ),),
+                ),
+              ),
               Row(
                 children: [
                   IconButton(
-                      onPressed: (){},
-                      icon: Image.asset('assets/img/add.png')
-                  ),
+                      onPressed: () {},
+                      icon: Image.asset('assets/img/add.png')),
                   IconButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     icon: Image.asset('assets/img/settings.png'),
                   ),
                   IconButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     icon: Image.asset('assets/img/vector-right.png'),
                   )
                 ],
@@ -280,13 +294,13 @@ class _ProfileHomeState extends State<ProfileHome> {
                   children: [
                     Image.asset('assets/img/folder-3.png'),
                     IconButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       icon: Image.asset('assets/img/more-options-v-3.png'),
                     ),
-
                   ],
                 ),
-                Text('Prototypes',
+                Text(
+                  'Prototypes',
                   style: TextStyle(
                     color: Color(0xFFAC4040),
                     fontSize: 15.0,
@@ -294,12 +308,14 @@ class _ProfileHomeState extends State<ProfileHome> {
                   ),
                 ),
                 SizedBox(height: 0.5),
-                Text('November 22.2020',
+                Text(
+                  'November 22.2020',
                   style: TextStyle(
                     fontSize: 10.0,
                     fontWeight: FontWeight.normal,
                     color: Color(0xFFAC4040),
-                  ),),
+                  ),
+                ),
               ],
             ),
           ),
@@ -318,13 +334,13 @@ class _ProfileHomeState extends State<ProfileHome> {
                   children: [
                     Image.asset('assets/img/folder-4.png'),
                     IconButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       icon: Image.asset('assets/img/more-options-v-4.png'),
                     ),
-
                   ],
                 ),
-                Text('Avatars',
+                Text(
+                  'Avatars',
                   style: TextStyle(
                     color: Color(0xFF23B0B0),
                     fontSize: 15.0,
@@ -332,12 +348,14 @@ class _ProfileHomeState extends State<ProfileHome> {
                   ),
                 ),
                 SizedBox(height: 0.5),
-                Text('November 10.2020',
+                Text(
+                  'November 10.2020',
                   style: TextStyle(
                     fontSize: 10.0,
                     fontWeight: FontWeight.normal,
                     color: Color(0xFF23B0B0),
-                  ),),
+                  ),
+                ),
               ],
             ),
           ),
@@ -347,22 +365,22 @@ class _ProfileHomeState extends State<ProfileHome> {
     );
   }
 
-  Widget cardRecentUpload(){
+  Widget cardRecentUpload() {
     return Container(
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text( 'Recent Uploads',
+              Text(
+                'Recent Uploads',
                 style: TextStyle(
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF22215B)
-                ),
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFF22215B)),
               ),
               IconButton(
-                onPressed: (){},
+                onPressed: () {},
                 icon: Image.asset('assets/img/sort.png'),
               ),
             ],
@@ -383,32 +401,35 @@ class _ProfileHomeState extends State<ProfileHome> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Projects.docx',
+                  Text(
+                    'Projects.docx',
                     style: TextStyle(
                       color: Color(0xFF22215B),
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
-                    ),),
+                    ),
+                  ),
                   Row(
                     children: [
-                      Text('November 22.2020',
-                      style: TextStyle(
-                        color: Color.fromRGBO(34, 33, 91, 0.6),
-                        fontSize: 11,
-                      ),
-                      ),
-                      SizedBox(width: 120.0),
-                      Text('300kb',
+                      Text(
+                        'November 22.2020',
                         style: TextStyle(
                           color: Color.fromRGBO(34, 33, 91, 0.6),
                           fontSize: 11,
-
-                        ),),
+                        ),
+                      ),
+                      SizedBox(width: 120.0),
+                      Text(
+                        '300kb',
+                        style: TextStyle(
+                          color: Color.fromRGBO(34, 33, 91, 0.6),
+                          fontSize: 11,
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
-
             ],
           ),
         ],

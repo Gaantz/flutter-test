@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'profile_home.dart';
+import 'profile.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: ProfileHome(),
+    home: Profile(),
     theme: ThemeData( fontFamily: 'Gilroy'),
   ));
 }
-
